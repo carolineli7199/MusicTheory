@@ -1,0 +1,42 @@
+{% extends "layout.html" %} {% block content %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename = 'learning-app.js') }}"
+></script>
+
+<div class="row">
+  <div class="col-3 mx-auto"></div>
+  <div class="title col-6 mx-auto">
+    <div>Learning Music Theory</div>
+  </div>
+  <div class="col-3 mx-auto"></div>
+</div>
+
+<div class="row">
+  <div class="col-6 mx-auto block">
+    <button class="button-start">
+      <span class="button-wrapper"> <span> Learn </span> </span>
+    </button>
+    <div id="learn" class="text1">
+      Don't know any music theory? <br />
+      Need to review? <br />
+      Let's learn!
+    </div>
+  </div>
+
+  <div class="col-6 mx-auto block">
+    <button class="button-start">
+      <span class="button-wrapper"> <span> Test </span> </span>
+    </button>
+    <div id="test" class="text1">
+      <span>
+        Ready to test your knowledge! <br />
+        Let's get to the exam!
+      </span>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
