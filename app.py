@@ -94,7 +94,32 @@ learning_data = {
     }
 }
 quiz_data = {
-
+    "1": {
+        "id": 1,
+        "type": "mc",
+        "img": "https://www.musictheoryacademy.com/wp-content/uploads/2020/06/Treble-Clef-Notes-Quiz-G.jpg",
+        "correct": "3", # index of the correct answer
+        "options": [
+            "A",
+            "B",
+            "D",
+            "G",
+            "F"
+        ]
+    },
+    "2": {
+        "id": 2,
+        "type": "mc",
+        "img": "https://www.quiz-tree.com/images/Music/bass_clef_staff_F3_600x393.png",
+        "correct": "1",
+        "options": [
+            "C",
+            "F",
+            "A",
+            "G",
+            "E"
+        ]
+    }
 }
 
 
