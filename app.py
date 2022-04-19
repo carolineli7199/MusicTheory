@@ -3,9 +3,6 @@ from flask import render_template, redirect, url_for
 from flask import Response, request, jsonify
 
 app = Flask(__name__)
-
-NUM_QUIZ_QUESTIONS = 10
-num_correct_answer = 0
 learning_data = {
     "1": {
         "id": 1,
@@ -98,29 +95,34 @@ quiz_data = {
         "id": 1,
         "type": "mc",
         "img": "https://www.musictheoryacademy.com/wp-content/uploads/2020/06/Treble-Clef-Notes-Quiz-G.jpg",
-        "correct": "3", # index of the correct answer
+        "correct": "G", # index of the correct answer
         "options": [
             "A",
             "B",
             "D",
             "G",
             "F"
-        ]
+        ],
+        "end_flag": 0
     },
     "2": {
         "id": 2,
         "type": "mc",
         "img": "https://www.quiz-tree.com/images/Music/bass_clef_staff_F3_600x393.png",
-        "correct": "1",
+        "correct": "F",
         "options": [
             "C",
             "F",
             "A",
             "G",
             "E"
-        ]
+        ],
+        "end_flag": 1
     }
 }
+
+NUM_QUIZ_QUESTIONS = len(quiz_data)
+num_correct_answer = 0
 
 
 @app.route('/')
@@ -130,15 +132,32 @@ def home():  # put application's code here
 
 @app.route('/learning/<id>')
 def loadLearningPage(id=None):
-    return render_template('learn.html', id=id)  # implement
+    return render_template('learn.html', learning_data=learning_data[id])  # implement
 
 @app.route('/quiz/<id>')
 def loadQuizPage(id=None):
-    return render_template('quiz.html', id=id)  # implement
+    return render_template('quiz.html', quiz_data=quiz_data[id])  # implement
 
 @app.route('/quizend')
 def loadQuizEndPage(id=None):
-    return render_template('end.html', num=num_correct_answer, total=NUM_QUIZ_QUESTIONS) 
+    global num_correct_answer
+    correct_counts = num_correct_answer
+    num_correct_answer = 0
+    return render_template('end.html', num=correct_counts, total=NUM_QUIZ_QUESTIONS) 
+
+@app.route('/quiz/checkanswer', methods=['GET', 'POST'])
+def checkanswer():
+    global num_correct_answer
+    json_data = request.get_json()   
+    user_answer = json_data["user_answer"] 
+    quiz_id = json_data["quiz_id"]
+    print(quiz_data[quiz_id]["correct"] )
+    print(user_answer)
+    if quiz_data[quiz_id]["correct"] == user_answer:
+        num_correct_answer += 1
+        return jsonify(notice = "Correct")
+    return jsonify(notice = "Wrong")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

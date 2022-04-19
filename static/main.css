@@ -39,3 +39,21 @@
   margin: 20px;
   margin-bottom: 50px;
 }
+
+.info {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  padding-top: 50px;
+}
+
+
+.float-right{
+  float: right;
+}
+
+
+.learning-container{
+  padding-top: 100px;
+  height: 80vh;
+}

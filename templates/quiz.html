@@ -3,13 +3,21 @@
 <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
 <script
   type="text/javascript"
-  src="{{ url_for('static', filename = 'learning-app.js') }}"
+  src="{{ url_for('static', filename = 'quiz.js') }}"
 ></script>
+<script>
+  let data = {{quiz_data|tojson}};
+  let img_link = data["img"]
+  let quiz_id = data["id"]
+  let next_id = quiz_id+1
+  let options = data["options"]
+  let end_flag = data["end_flag"]
+</script>
 
-<div class="row">
-  <div class="col-3 mx-auto"></div>
-  <div id="result" class="title col-6 mx-auto">Quiz Page</div>
-  <div class="col-3 mx-auto"></div>
+<div class="learning-container">
+  <div id="image" class="row"></div>
+  <div id="options" class="row"></div>
 </div>
+<div id="next-button" class="float-right"></div>
 
 {% endblock %}
