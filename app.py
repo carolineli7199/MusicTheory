@@ -56,7 +56,7 @@ learning_data = {
             {
                 "clef": 2,
                 "notes": [
-                    {"keys": ["c/4"]}
+                    {"keys": ["a/5"]}
                 ]
             }
         ],
