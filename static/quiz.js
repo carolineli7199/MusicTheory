@@ -1,5 +1,41 @@
-$(document).ready(function(){  
-  $("#image").append("<div class='col-4 mx-auto'></div><div class='col-4 mx-auto'><img src=" + img_link + " width = '300', height = '250'></div><div class='col-4 mx-auto'></div>")
+const { Renderer, Stave, Voice, StaveNote, Formatter } = Vex.Flow;
+
+$(document).ready(function(){
+  $("#image").append("<div class='col-4 mx-auto'></div>")
+
+  let staffdiv = document.createElement("div")
+  staffdiv.className = "col-4 mx-auto"
+  console.log(staffdiv)
+  let renderer = new Renderer(staffdiv, Renderer.Backends.SVG);
+  renderer.resize(400, 200)
+  let context = renderer.getContext()
+
+  let stave = new Stave(10, 40, 350);
+
+  // add the clef if required (the staff learning page does not need it)
+  if (staff_data["clef"] === 1) {
+    stave.addClef("treble")
+  }
+  if (staff_data["clef"] === 2) {
+    stave.addClef("bass")
+  }
+
+  // add notes if necessary
+  if (staff_data["notes"].length > 0) {
+    let notes = []
+    for (let note of staff_data["notes"]) {
+      notes.push(new StaveNote({keys: note["keys"], duration: "q"}))
+    }
+    let voice = new Voice({num_beats: staff_data["notes"].length, beat_value: 4})
+    voice.addTickables(notes)
+    new Formatter().joinVoices([voice]).format([voice], 350)
+    voice.draw(context, stave)
+  }
+
+  stave.setContext(context).draw()
+
+  document.getElementById("image").append(staffdiv)
+  $("#image").append("<div class='col-4 mx-auto'></div>")
 
   $.each(options, function(index, value){
      let btn = $("<div class='col-md-1'><button onclick='myFunction(`"+ value +"`,`"+quiz_id+"`)'>"+value+"</button></div>");

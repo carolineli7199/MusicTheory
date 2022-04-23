@@ -12,9 +12,10 @@ learning_data = {
             "The backbone of reading music starts with <b>the staff</b>. The staff and the bass (covered next) will be how you determine notes.",
         ],
         "num_imgs": 1,
-        "imgs": [
-            "http://bp3.blogger.com/_Tad4UOfdqXs/RZTwOqb7whI/AAAAAAAAAAc/A31QI-ZldAM/w1200-h630-p-k-no-nu/staff-2.jpg",
-        ],
+        "staff": {
+            "clef": 0,
+            "notes": []
+        },
         "next": "The Clefs"
     },
     "2": {
@@ -25,9 +26,15 @@ learning_data = {
             "Music has two clefs: the <b>treble</b> and <b>bass</b> clefs. In music theory, each clef is denoted on the left side of the staff.",
         ],
         "num_imgs": 2,
-        "imgs": [
-            "https://www.liveabout.com/thmb/zpDIbDJxet6iSIuiAPmpTdcnueo=/1780x1096/filters:no_upscale():max_bytes(150000):strip_icc()/treble-304441_1280_-5c8721fbc9e77c00010c2285.jpg",
-            "https://hellomusictheory.com/wp-content/uploads/2019/04/bass-clef-1024x682.png",
+        "staff": [
+            {
+                "clef": 1,
+                "notes": []
+            },
+            {
+                "clef": 2,
+                "notes": []
+            }
         ],
         "next": "Middle C"
     },
@@ -39,9 +46,19 @@ learning_data = {
             "The easiest way to start reading notes is by using a “home base”. It often is the “middle” C note. It is denoted with the line in the middle to show that it is a note on a line in the staff. <br>Notes always repeat in A-G order and wrap around. So, once you have C you can count up or down to the note you desire."
         ],
         "num_imgs": 2,
-        "imgs": [
-            "https://www.musictheoryacademy.com/wp-content/uploads/2020/06/Treble-Clef-Notes-Quiz-middle-C.jpg",
-            "https://www.musictheoryacademy.com/wp-content/uploads/2020/06/Bass-Clef-Notes-Quiz-Middle-C.jpg",
+        "staff": [
+            {
+                "clef": 1,
+                "notes": [
+                    {"keys": ["c/4"]}
+                ]
+            },
+            {
+                "clef": 2,
+                "notes": [
+                    {"keys": ["c/4"]}
+                ]
+            }
         ],
         "next": "Treble Spaces and Lines"
     },
@@ -54,9 +71,26 @@ learning_data = {
             "On the treble clef the notes on the lines will spell out E-G-B-D-F in ascending order.",
         ],
         "num_imgs": 2,
-        "imgs": [
-            "https://www.musictheoryacademy.com/wp-content/uploads/2011/02/treble-clef-spaces.jpg",
-            "https://www.musictheoryacademy.com/wp-content/uploads/2011/02/music-theory-treble-clef-lines2.jpg",
+        "staff": [
+            {
+                "clef": 1,
+                "notes": [
+                    {"keys": ["f/4"]},
+                    {"keys": ["a/4"]},
+                    {"keys": ["c/5"]},
+                    {"keys": ["e/5"]}
+                ]
+            },
+            {
+                "clef": 1,
+                "notes": [
+                    {"keys": ["e/4"]},
+                    {"keys": ["g/4"]},
+                    {"keys": ["b/4"]},
+                    {"keys": ["d/5"]},
+                    {"keys": ["f/5"]},
+                ]
+            }
         ],
         "next": "Clef Spaces and Lines"
     },
@@ -70,9 +104,26 @@ learning_data = {
             "Notice: compared to the treble, each note was essentially shifted down one on the staff.",
         ],
         "num_imgs": 2,
-        "imgs": [
-            "https://www.skoove.com/blog/wp-content/uploads/2019/08/Space-Notes-1024x492.png",
-            "https://www.kindpng.com/picc/m/303-3034242_bass-line-notes-bass-clef-note-f-hd.png",
+        "staff": [
+            {
+                "clef": 2,
+                "notes": [
+                    {"keys": ["f/4"]},
+                    {"keys": ["a/4"]},
+                    {"keys": ["c/5"]},
+                    {"keys": ["e/5"]}
+                ]
+            },
+            {
+                "clef": 2,
+                "notes": [
+                    {"keys": ["e/4"]},
+                    {"keys": ["g/4"]},
+                    {"keys": ["b/4"]},
+                    {"keys": ["d/5"]},
+                    {"keys": ["f/5"]},
+                ]
+            }
         ],
         "next": "Example"
     },
@@ -84,9 +135,13 @@ learning_data = {
             "From middle C, we would count up to: D, E, F, G. So this note is G."
         ],
         "num_imgs": 1,
-        "imgs": [
-            "https://www.musictheoryacademy.com/wp-content/uploads/2020/06/Treble-Clef-Notes-Quiz-G.jpg"
-        ],
+        "staff": {
+            "clef": 1,
+            "notes": [
+                {"keys": ["c/4"]},
+                {"keys": ["g/4"]}
+            ]
+        },
         "next": None
     }
 }
@@ -94,8 +149,13 @@ quiz_data = {
     "1": {
         "id": 1,
         "type": "mc",
-        "img": "https://www.musictheoryacademy.com/wp-content/uploads/2020/06/Treble-Clef-Notes-Quiz-G.jpg",
-        "correct": "G", # index of the correct answer
+        "staff": {
+            "clef": 1,
+            "notes": [
+                {"keys": ["g/4"]}
+            ]
+        },
+        "correct": "G",
         "options": [
             "A",
             "B",
@@ -108,7 +168,12 @@ quiz_data = {
     "2": {
         "id": 2,
         "type": "mc",
-        "img": "https://www.quiz-tree.com/images/Music/bass_clef_staff_F3_600x393.png",
+        "staff": {
+            "clef": 2,
+            "notes": [
+                {"keys": ["f/4"]}
+            ]
+        },
         "correct": "F",
         "options": [
             "C",

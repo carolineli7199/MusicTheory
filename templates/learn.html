@@ -1,25 +1,27 @@
 {% extends "layout.html" %} {% block content %}
 
-<link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
-<script
-  type="text/javascript"
-  src="{{ url_for('static', filename = 'learn.js') }}"
-></script>
-<script>
-  let data = {{learning_data|tojson}};
-  let img_links = data["imgs"]
-  let img_num = data["num_imgs"]
-  let info = data["info"]
-  let next_id = data["id"]+1
-  let next_topic = data["next"]
-</script>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
+    <script src="https://cdn.jsdelivr.net/npm/vexflow/build/cjs/vexflow.js"></script>
+    <script
+        type="text/javascript"
+        src="{{ url_for('static', filename = 'learn.js') }}"
+    ></script>
+
+    <script>
+      let data = {{learning_data|tojson}};
+      let img_num = data["num_imgs"]
+      let staff_data = data['staff']
+      let info = data["info"]
+      let next_id = data["id"]+1
+      let next_topic = data["next"]
+    </script>
 
 
-<div class="learning-container">
-  <div id="image" class="row"></div>
-  <div id="info" class="info"></div>
-</div>
-<div id="next-button" class="float-right"></div>
+    <div class="learning-container">
+      <div id="imgs" class="row"></div>
+      <div id="info" class="info"></div>
+    </div>
+    <div id="next-button" class="float-right"></div>
 
 
 {% endblock %}
