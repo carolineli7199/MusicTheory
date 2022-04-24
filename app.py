@@ -146,9 +146,49 @@ learning_data = {
     }
 }
 quiz_data = {
-    "1": {
+     "1": {
         "id": 1,
         "type": "mc",
+        "question": "What is the name of the following clef?",
+        "staff": {
+            "clef": 1,
+            "notes": []
+        },
+        "correct": "C",
+        "options": [
+            "A",
+            "B",
+            "C"
+        ],
+        "has_contents": 1,
+        "contents": [
+            "Clef",
+            "Bass",
+            "treble"
+        ],
+        "end_flag": 0
+    },
+     "2": {
+        "id": 2,
+        "type": "mc",
+        "question": "Is this Bass clef correctly placed?",
+        "staff": {
+            "clef": 2,
+            "notes": []
+        },
+        "correct": "Yes",
+        "options": [
+            "Yes",
+            "No"
+        ],
+        "has_contents": 0,
+        "contents": ['', ''],
+        "end_flag": 0
+    },
+    "3": {
+        "id": 3,
+        "type": "mc",
+        "question": "Which note is placed on the staff?",
         "staff": {
             "clef": 1,
             "notes": [
@@ -163,11 +203,36 @@ quiz_data = {
             "G",
             "F"
         ],
+        "has_contents": 0,
+        "contents": ['', ''],
         "end_flag": 0
     },
-    "2": {
-        "id": 2,
+    "4": {
+        "id": 4,
         "type": "mc",
+        "question": "Which note is placed on the staff?",
+        "staff": {
+            "clef": 1,
+            "notes": [
+                {"keys": ["e/5"]}
+            ]
+        },
+        "correct": "E",
+        "options": [
+            "A",
+            "B",
+            "D",
+            "E",
+            "F"
+        ],
+        "has_contents": 0,
+        "contents": ['', ''],
+        "end_flag": 0
+    },
+    "5": {
+        "id": 5,
+        "type": "mc",
+        "question": "Which note is placed on the staff?",
         "staff": {
             "clef": 2,
             "notes": [
@@ -182,8 +247,85 @@ quiz_data = {
             "G",
             "E"
         ],
+        "has_contents": 0,
+        "contents": ['', ''],
+        "end_flag": 0
+    },
+    "6": {
+        "id": 6,
+        "type": "mc",
+        "question": "Which note is placed on the staff?",
+        "staff": {
+            "clef": 2,
+            "notes": [
+                {"keys": ["a/4"]}
+            ]
+        },
+        "correct": "A",
+        "options": [
+            "A",
+            "B",
+            "D",
+            "G",
+            "F"
+        ],
+        "has_contents": 0,
+        "contents": ['', ''],
+        "end_flag": 0
+    },
+    "7": {
+        "id": 7,
+        "type": "clicknode",
+        "question": "Given a staff with a treble placed in the beginning, place a note at location that the lower “E” note appears.",
+        "staff": {
+            "clef": 1,
+            "notes": [
+                {"keys": ["e/4"]}
+            ]
+        },
+        "correct": "E",
+        "end_flag": 0
+    },
+    "8": {
+        "id": 8,
+        "type": "clicknode",
+        "question": "Given a staff with a treble placed in the beginning, place a note at location that a “D” note appears.",
+        "staff": {
+            "clef": 1,
+            "notes": [
+                {"keys": ["d/4"]}
+            ]
+        },
+        "correct": "D",
+        "end_flag": 0
+    },
+    "9": {
+        "id": 9,
+        "type": "clicknode",
+        "question": "Given a staff with a bass placed in the beginning, place a note at location that a “E” note appears.",
+        "staff": {
+            "clef": 2,
+            "notes": [
+                {"keys": ["e/4"]}
+            ]
+        },
+        "correct": "E",
+        "end_flag": 0
+    },
+    "10": {
+        "id": 10,
+        "type": "clicknode",
+        "question": "Given a staff with a bass placed in the beginning, place a note at location that a “D” note appears.",
+        "staff": {
+            "clef": 2,
+            "notes": [
+                {"keys": ["d/4"]}
+            ]
+        },
+        "correct": "D",
         "end_flag": 1
     }
+
 }
 
 NUM_QUIZ_QUESTIONS = len(quiz_data)
@@ -216,11 +358,17 @@ def checkanswer():
     json_data = request.get_json()   
     user_answer = json_data["user_answer"] 
     quiz_id = json_data["quiz_id"]
-    print(quiz_data[quiz_id]["correct"] )
-    print(user_answer)
+    if quiz_id == 1:
+        num_correct_answer = 0
+    # print(quiz_data[quiz_id]["correct"] )
+    # print(user_answer)
     if quiz_data[quiz_id]["correct"] == user_answer:
         num_correct_answer += 1
+        print("Correct")
+        print(num_correct_answer)
         return jsonify(notice = "Correct")
+    print("Wrong")
+    print(num_correct_answer)
     return jsonify(notice = "Wrong")
 
 

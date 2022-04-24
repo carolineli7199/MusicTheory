@@ -1,7 +1,7 @@
 {% extends "layout.html" %} {% block content %}
 
 <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
-    <script src="https://cdn.jsdelivr.net/npm/vexflow/build/cjs/vexflow.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vexflow/build/cjs/vexflow.js"></script>
 <script
   type="text/javascript"
   src="{{ url_for('static', filename = 'quiz.js') }}"
@@ -11,13 +11,23 @@
   let staff_data = data["staff"]
   let quiz_id = data["id"]
   let next_id = quiz_id+1
+  let type = data["type"]
+  let question = data["question"]
   let options = data["options"]
+  let contents = data["contents"]
   let end_flag = data["end_flag"]
+  let has_contents = data["has_contents"]
 </script>
 
-<div class="learning-container">
+<div class="learning-container" id="learning-container">
   <div id="image" class="row"></div>
-  <div id="options" class="row"></div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-8" id="options">
+      <div class="row" id="options_c"></div>
+    </div>
+  </div>
+  <div class="row" id="clickstaff"></div>
 </div>
 <div id="next-button" class="float-right"></div>
 
