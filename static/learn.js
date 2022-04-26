@@ -78,13 +78,20 @@ $(document).ready(function(){
     }
 
     $.each(info, function(index, value){
-        $("#info").append(value);
+        msg = $("<div/>");
+        padmsg = msg.addClass("paddingbottom");
+        padmsg.html(value);
+        $("#info").append(padmsg);
     });
 
     if(next_topic != null){
-        $("#next-button").html("<a href='/learning/"+ next_id+ "'><button><span>  "+next_topic+"  </span></button></a>")
+        $("#next-button").html("<a href='/learning/"+ next_id+ "'><button class='next-button-start'><span class='next-button-wrapper'>  "+next_topic+"  </span></button></a>")
     }
     else{
-        $("#next-button").html("<a href='/quiz/1'><button><span>  Test  </span></button></a>")
+        $("#next-button").html("<a href='/quiz/1'><button class='next-button-start'><span class='next-button-wrapper'>  Test  </span></button></a>")
+    }
+
+    if(previous_topic != null){
+        $("#previous-button").html("<a href='/learning/"+ previous_id+ "'><button class='next-button-start'><span class='next-button-wrapper'>  "+previous_topic+"  </span></button></a>")
     }
 })

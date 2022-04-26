@@ -16,7 +16,8 @@ learning_data = {
             "clef": 0,
             "notes": []
         },
-        "next": "The Clefs"
+        "next": "The Clefs",
+        "previous": None
     },
     "2": {
         "id": 2,
@@ -36,14 +37,16 @@ learning_data = {
                 "notes": []
             }
         ],
-        "next": "Middle C"
+        "next": "Middle C",
+        "previous": "The Staff"
     },
     "3": {
         "id": 3,
         "num_blurbs": 1,
         "title": "Middle C",
         "info": [
-            "The easiest way to start reading notes is by using a “home base”. It often is the “middle” C note. It is denoted with the line in the middle to show that it is a note on a line in the staff. <br>Notes always repeat in A-G order and wrap around. So, once you have C you can count up or down to the note you desire."
+            "The easiest way to start reading notes is by using a “home base”. It often is the “middle” C note. It is denoted with the line in the middle to show that it is a note on a line in the staff.",
+            "Notes always repeat in A-G order and wrap around. So, once you have C you can count up or down to the note you desire."
         ],
         "num_imgs": 2,
         "staff": [
@@ -60,7 +63,8 @@ learning_data = {
                 ]
             }
         ],
-        "next": "Treble Spaces and Lines"
+        "next": "Treble Spaces and Lines",
+        "previous": "The Clefs"
     },
     "4": {
         "id": 4,
@@ -92,7 +96,9 @@ learning_data = {
                 ]
             }
         ],
-        "next": "Clef Spaces and Lines"
+        "next": "Clef Spaces and Lines",
+        "previous": "Middle C"
+        
     },
     "5": {
         "id": 5,
@@ -125,7 +131,9 @@ learning_data = {
                 ]
             }
         ],
-        "next": "Example"
+        "next": "Example",
+        "previous": "Treble Spaces and Lines"
+        
     },
     "6": {
         "id": 6,
@@ -142,7 +150,8 @@ learning_data = {
                 {"keys": ["g/4"]}
             ]
         },
-        "next": None
+        "next": None,
+        "previous": "Clef Spaces and Lines"
     }
 }
 quiz_data = {

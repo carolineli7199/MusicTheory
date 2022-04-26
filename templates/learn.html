@@ -14,6 +14,8 @@
       let info = data["info"]
       let next_id = data["id"]+1
       let next_topic = data["next"]
+      let previous_topic = data["previous"]
+      let previous_id = data["id"]-1
     </script>
 
 
@@ -21,7 +23,10 @@
       <div id="imgs" class="row"></div>
       <div id="info" class="info"></div>
     </div>
-    <div id="next-button" class="float-right"></div>
+    <div class="button-container">
+      <div id="previous-button" class="float-left"></div>
+      <div id="next-button" class="float-right"></div>
+    </div>
 
 
 {% endblock %}

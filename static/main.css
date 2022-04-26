@@ -35,6 +35,34 @@
   font: inherit;
 }
 
+.next-button-wrapper {
+  align-items: center;
+  font-size: small;
+  display: inline-flex;
+  justify-content: center;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
+.next-button-start {
+  padding: 0.5rem 1rem;
+  background-color: #3ccfcf;
+  border-radius: 5rem;
+  border:none;
+  cursor: pointer;
+}
+
+.mc-button{
+    line-height: 0.5;
+    padding: 0.1rem 0.5rem;
+    background-color: #3ccfcf;
+    border-radius: 5rem;
+    border:none;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+}
+
 .text1 {
   margin: 20px;
   margin-bottom: 50px;
@@ -45,15 +73,57 @@
   width: 60%;
   padding: 10px;
   padding-top: 50px;
+  border-style: outset;
+  background-color: whitesmoke;
+  height: 30vh;
 }
 
 
 .float-right{
   float: right;
+  padding-right: 20px;
+}
+
+.float-left{
+  float: left;
+  padding-left: 20px;
 }
 
 
 .learning-container{
   padding-top: 100px;
-  height: 80vh;
+  height: 70vh;
+}
+
+.button-container{
+  height: 30vh;
+}
+
+.home-container{
+  padding-top: 50px;
+  height: 100vh;
+}
+
+.container-style{
+  background-color: lightblue;
+  width: 101vw;
+  position: relative;
+  left:49%;
+  right:49%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.paddingbottom{
+  padding-bottom: 20px;
+}
+
+button:hover { background-color: #f7f5a2;}
+
+button {
+  cursor: pointer;
+}
+
+button:focus{ 
+  background-color: #ffd000; 
 }

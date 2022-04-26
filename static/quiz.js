@@ -61,7 +61,7 @@ function setMC() {
   $.each(options, function (index, value) {
     let cont = $("<div class='col-md-10'>" + contents[index] + "</div>");
     let btn = $(
-      "<div class='col-md-2'><button onclick='getNext(`" +
+      "<div class='col-md-2'><button class='mc-button' onclick='getNext(`" +
         value +
         "`,`" +
         quiz_id +
@@ -145,26 +145,27 @@ function checkAnswer(user_answer, quiz_id) {
   });
 }
 
+
 function getNext(user_answer, quiz_id) {
   if (end_flag == 0) {
     $("#next-button").html(
       "<a href='/quiz/" +
         next_id +
-        "'><button onclick='checkAnswer(`" +
+        "'><button class='next-button-start' onclick='checkAnswer(`" +
         user_answer +
         "`,`" +
         quiz_id +
         "`)'>" +
-        "<span>  Next  </span></button></a>"
+        "<span class='next-button-wrapper'>  Next  </span></button></a>"
     );
   } else {
     $("#next-button").html(
-      "<a href='/quizend'><button onclick='checkAnswer(`" +
+      "<a href='/quizend'><button class='next-button-start' onclick='checkAnswer(`" +
         user_answer +
         "`,`" +
         quiz_id +
         "`)'>" +
-        "<span>  Look at result  </span></button></a>"
+        "<span lass='next-button-wrapper'>>  Look at result  </span></button></a>"
     );
   }
 }
