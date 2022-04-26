@@ -343,7 +343,7 @@ num_correct_answer = 0
 
 @app.route('/')
 def home():  # put application's code here
-    return render_template('home.html')   
+    return render_template('home.html')
     #return "hello world"
 
 @app.route('/learning/<id>')
@@ -359,7 +359,7 @@ def loadQuizEndPage(id=None):
     global num_correct_answer
     correct_counts = num_correct_answer
     num_correct_answer = 0
-    return render_template('end.html', num=correct_counts, total=NUM_QUIZ_QUESTIONS) 
+    return render_template('end.html', num=correct_counts, total=NUM_QUIZ_QUESTIONS)
 
 @app.route('/quiz/checkanswer', methods=['GET', 'POST'])
 def checkanswer():
@@ -380,6 +380,11 @@ def checkanswer():
     print(num_correct_answer)
     return jsonify(notice = "Wrong")
 
+def inject_learn_menu():
+    global learning_data
+    return dict(learning_menu=learning_data)
+
 
 if __name__ == '__main__':
+    app.context_processor(inject_learn_menu)
     app.run(debug=True)
