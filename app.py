@@ -380,6 +380,7 @@ def checkanswer():
     print(num_correct_answer)
     return jsonify(notice = "Wrong")
 
+@app.context_processor
 def inject_learn_menu():
     global learning_data
     return dict(learning_menu=learning_data)

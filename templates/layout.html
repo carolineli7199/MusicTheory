@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="data:," />
 
     <!-- jquery -->
@@ -26,25 +27,32 @@
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
     <title>Learning Music Theory</title>
   </head>
+     <script>
+      let menu= {{learning_menu|tojson}};
+      $(document).ready(function(){
+        $.each(menu, function(key, value){
+          $(".dropdown-content").append("<a href='/learning/"+key+"'>"+value["title"]+"</a>")
+        });
+      })
+    </script>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="/">Home</a>
-        <a class="navbar-brand" href="/learning/1">The Staff</a>
-        <a class="navbar-brand" href="/learning/2">The Clefs</a>
-        <a class="navbar-brand" href="/learning/3">Middle C</a>
-        <a class="navbar-brand" href="/learning/4">Treble Spaces and Lines</a>
-        <a class="navbar-brand" href="/learning/5">Bass Spaces and Lines</a>
-        <a class="navbar-brand" href="/learning/6">Example</a>
-        <a class="navbar-brand" href="/quiz/1">Test Yourself</a>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto"></div>
+    
+    <div class="navbar navbar-expand-lg">
+      <a href="/">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">Learn 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+
         </div>
-      </div>
-    </nav>
+      </div> 
+      <a href="/quiz/1">Test Yourself</a>
+    </div>
     <div class="container">
       <div class = "container-style">
         {% block content %} {% endblock %}
       </div>
+    </div>
   </body>
 </html>

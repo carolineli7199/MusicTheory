@@ -58,6 +58,13 @@ $(document).ready(function () {
 });
 
 function setMC() {
+  console.log(options.length)
+  if(options.length == 2){
+    let space = $(
+      "<div class='col-md-3'></div>"
+    );
+    $("#options_c").append(space);
+  }
   $.each(options, function (index, value) {
     let cont = $("<div class='col-md-10'>" + contents[index] + "</div>");
     let btn = $(
