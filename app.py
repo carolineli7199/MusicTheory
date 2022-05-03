@@ -285,7 +285,7 @@ quiz_data = {
     "7": {
         "id": 7,
         "type": "clicknode",
-        "question": "Given a staff with a treble placed in the beginning, place a note at location that the lower “E” note appears.",
+        "question": "Given a staff with <b>a treble</b> placed in the beginning, place a note at location that the lower “E” note appears.",
         "staff": {
             "clef": 1,
             "notes": [
@@ -298,7 +298,7 @@ quiz_data = {
     "8": {
         "id": 8,
         "type": "clicknode",
-        "question": "Given a staff with a treble placed in the beginning, place a note at location that a “D” note appears.",
+        "question": "Given a staff with <b>a treble</b> placed in the beginning, place a note at location that a “D” note appears.",
         "staff": {
             "clef": 1,
             "notes": [
@@ -311,7 +311,7 @@ quiz_data = {
     "9": {
         "id": 9,
         "type": "clicknode",
-        "question": "Given a staff with a bass placed in the beginning, place a note at location that a “E” note appears.",
+        "question": "Given a staff with <b> a bass </b> placed in the beginning, place a note at location that a “E” note appears.",
         "staff": {
             "clef": 2,
             "notes": [
@@ -324,7 +324,7 @@ quiz_data = {
     "10": {
         "id": 10,
         "type": "clicknode",
-        "question": "Given a staff with a bass placed in the beginning, place a note at location that a “D” note appears.",
+        "question": "Given a staff with <b> a bass </b> placed in the beginning, place a note at location that a “D” note appears.",
         "staff": {
             "clef": 2,
             "notes": [

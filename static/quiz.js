@@ -1,25 +1,25 @@
 const { Renderer, Stave, Voice, StaveNote, Formatter } = Vex.Flow;
 
 $(document).ready(function () {
-  $("#learning-container").prepend("<div id='question' class='row'></div>");
-  $("#question").append(
-    "<div class='col-3'></div> <div class='col-8' id='q_block'></div>"
+  $("#learning-container").prepend(
+    "<div id='question' class='row justify-content-md-center'></div>"
   );
+  $("#question").append("<div class='col-md-auto' id='q_block'></div>");
   $("#q_block").append(
-    "<div class='col mx-auto'><div> <b> Question " +
+    "<div class='col mx-auto'><div class='ques'> <b> Question " +
       quiz_id +
       ":</b> " +
       question +
       "</div></div>"
   );
   if (type == "mc") {
-    $("#image").append("<div class='col-4 mx-auto'></div>");
+    // $("#image").append("<div class='col-4 mx-auto'></div>");
 
     let staffdiv = document.createElement("div");
     staffdiv.className = "col-4 mx-auto";
     console.log(staffdiv);
     let renderer = new Renderer(staffdiv, Renderer.Backends.SVG);
-    renderer.resize(400, 200);
+    renderer.resize(370, 200);
     let context = renderer.getContext();
 
     let stave = new Stave(10, 40, 350);
@@ -50,7 +50,7 @@ $(document).ready(function () {
     stave.setContext(context).draw();
 
     document.getElementById("image").append(staffdiv);
-    $("#image").append("<div class='col-4 mx-auto'></div>");
+    // $("#image").append("<div class='col-4 mx-auto'></div>");
     setMC();
   } else if (type == "clicknode") {
     build_block();
@@ -58,11 +58,9 @@ $(document).ready(function () {
 });
 
 function setMC() {
-  console.log(options.length)
-  if(options.length == 2){
-    let space = $(
-      "<div class='col-md-3'></div>"
-    );
+  console.log(options.length);
+  if (options.length == 2) {
+    let space = $("<div class='col-md-3'></div>");
     $("#options_c").append(space);
   }
   $.each(options, function (index, value) {
@@ -93,10 +91,10 @@ function setMC() {
 function build_block() {
   let str =
     '<div class="col-4 mx-auto"> <svg width="800" height="400" viewBox="0 0 400 200" style="width: 400px; height: 200px;"><g class="vf-stave" id="vf-auto1000">' +
-    '<path id="b1" onclick=checkNum_num(1) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 80L360 80"></path> <rect id="b2" onclick=checkNum_num(2) x="10" y="85" width="350" height="10" style="fill:rgb(255,255,255);"/>' +
-    '<path id="b3" onclick=checkNum_num(3) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 95L360 95"></path> <rect id="b4" onclick=checkNum_num(4) x="10" y="100" width="350" height="10" style="fill:rgb(255,255,255);"/>' +
-    '<path id="b5" onclick=checkNum_num(5) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 110L360 110"></path><rect id="b6" onclick=checkNum_num(6) x="10" y="115" width="350" height="10" style="fill:rgb(255,255,255);"/>' +
-    '<path id="b7" onclick=checkNum_num(7) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 125L360 125"></path><rect id="b8" onclick=checkNum_num(8) x="10" y="130" width="350" height="10" style="fill:rgb(255,255,255);"/>' +
+    '<path id="b1" onclick=checkNum_num(1) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 80L360 80"></path> <rect id="b2" onclick=checkNum_num(2) x="10" y="83" width="350" height="10" style="fill:rgb(255,255,255);"/>' +
+    '<path id="b3" onclick=checkNum_num(3) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 95L360 95"></path> <rect id="b4" onclick=checkNum_num(4) x="10" y="98" width="350" height="10" style="fill:rgb(255,255,255);"/>' +
+    '<path id="b5" onclick=checkNum_num(5) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 110L360 110"></path><rect id="b6" onclick=checkNum_num(6) x="10" y="113" width="350" height="10" style="fill:rgb(255,255,255);"/>' +
+    '<path id="b7" onclick=checkNum_num(7) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 125L360 125"></path><rect id="b8" onclick=checkNum_num(8) x="10" y="128" width="350" height="10" style="fill:rgb(255,255,255);"/>' +
     '<path id="b9" onclick=checkNum_num(9) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 140L360 140"></path> ';
   str +=
     '<rect x="10" y="79" width="1" height="60" fill="black"></rect><rect x="360" y="79" width="1" height="60" fill="black"></rect><g class="vf-clef" id="vf-auto1003">' +
@@ -125,8 +123,8 @@ function checkNum_num(id) {
     }
     //$("#b" + i).css("fill", "rgb(255,255,255)");
   }
-  $("#b" + id).css("stroke", "rgb(0,0,255)");
-  $("#b" + id).css("fill", "rgb(0,0,255)");
+  $("#b" + id).css("stroke", "#27537a");
+  $("#b" + id).css("fill", "#27537a");
 
   getNext(list[id - 1], quiz_id + "");
 }
@@ -151,7 +149,6 @@ function checkAnswer(user_answer, quiz_id) {
     },
   });
 }
-
 
 function getNext(user_answer, quiz_id) {
   if (end_flag == 0) {

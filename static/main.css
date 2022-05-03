@@ -11,8 +11,8 @@
   margin: 30px;
 }
 
-.home-padding{
-  padding-top: 100px;
+.home-padding {
+  padding-top: 30px;
 }
 
 .button-wrapper {
@@ -27,10 +27,10 @@
 .button-start {
   font-size: 1.125rem;
   font-weight: 700;
-  letter-spacing: 0.0625rem;  
+  letter-spacing: 0.0625rem;
   line-height: 1.222222222222222;
   padding: 3rem 8rem;
-  color:white;
+  color: white;
   background-color: #e0a96d;
   appearance: none;
   border: none;
@@ -54,19 +54,19 @@
   color: white;
   background-color: #e0a96d;
   border-radius: 5rem;
-  border:none;
+  border: none;
   cursor: pointer;
 }
 
-.mc-button{
-    line-height: 0.5;
-    padding: 0.2rem 1rem;
-    background-color: #e0a96d;
-    border-radius: 5rem;
-    border:none;
-    cursor: pointer;
-    display: inline-block;
-    font: inherit;
+.mc-button {
+  line-height: 0.5;
+  padding: 0.2rem 1rem;
+  background-color: #e0a96d;
+  border-radius: 5rem;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
 }
 
 .text1 {
@@ -85,55 +85,56 @@
   height: 30vh;
 }
 
-
-.float-right{
+.float-right {
   float: right;
   padding-right: 10%;
 }
 
-.float-left{
+.float-left {
   float: left;
   padding-left: 10%;
 }
 
-
-.learning-container{
-  padding-top: 100px;
+.learning-container {
+  margin-bottom: 15px;
+  padding-top: 70px;
   height: 70vh;
 }
 
-.button-container{
-  height: 30vh;
+.button-container {
+  height: 20vh;
 }
 
-.home-container{
+.home-container {
   padding-top: 50px;
-  height: 100vh;
+  height: 90vh;
 }
 
-.container-style{
+.container-style {
   background-color: #f5f0e1;
   width: 101vw;
   position: relative;
-  left:49%;
-  right:49%;
+  left: 49%;
+  right: 49%;
   margin-left: -50vw;
   margin-right: -50vw;
 }
 
-.paddingbottom{
+.paddingbottom {
   padding-bottom: 20px;
 }
 
-button:hover { background-color: #ff6e40;}
+button:hover {
+  background-color: #ff6e40;
+}
 
-button:focus { background-color: #ff6e40;}
+button:focus {
+  background-color: #ff6e40;
+}
 
 button {
   cursor: pointer;
 }
-
-
 
 .navbar {
   position: relative;
@@ -155,7 +156,7 @@ button {
 }
 
 .dropdown .dropbtn {
-  font-size: 16px;  
+  font-size: 16px;
   border: none;
   outline: none;
   color: white;
@@ -165,7 +166,8 @@ button {
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover,
+.dropdown:hover .dropbtn {
   background-color: #ddc3a5;
 }
 
@@ -174,7 +176,7 @@ button {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -193,4 +195,10 @@ button {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.ques {
+  margin-top: 50px;
+  display: inline-block;
+  max-width: 700px;
 }
