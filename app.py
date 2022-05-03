@@ -248,7 +248,7 @@ quiz_data = {
                 {"keys": ["f/4"]}
             ]
         },
-        "correct": "F",
+        "correct": "A",
         "options": [
             "C",
             "F",
@@ -270,10 +270,10 @@ quiz_data = {
                 {"keys": ["a/4"]}
             ]
         },
-        "correct": "A",
+        "correct": "C",
         "options": [
             "A",
-            "B",
+            "C",
             "D",
             "G",
             "F"
