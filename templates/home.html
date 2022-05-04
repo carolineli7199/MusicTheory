@@ -2,35 +2,39 @@
 
 <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
 
-<div class="row">
-  <div class="col-3 mx-auto"></div>
-  <div class="title col-6 mx-auto">
-    <div>Learning Music Theory</div>
-  </div>
-  <div class="col-3 mx-auto"></div>
-</div>
-
-<div class="row">
-  <div class="col-6 mx-auto block">
-     <a href="/learning/1"><button class="button-start">
-     <span class="button-wrapper">  Learn  </span>
-    </button></a>
-    <div id="learn" class="text1">
-      Don't know any music theory? <br />
-      Need to review? <br />
-      Let's learn!
+<div class="home-container">
+  <div class="row">
+    <div class="col-3 mx-auto"></div>
+    <div class="title col-6 mx-auto">
+      <div>Learning Music Theory</div>
     </div>
+    <div class="col-3 mx-auto"></div>
   </div>
 
-  <div class="col-6 mx-auto block">
-    <a href="/quiz/1"><button class="button-start">
-      <span class="button-wrapper">  Test </span>
-    </button></a>
-    <div id="test" class="text1">
-      <span>
-        Ready to test your knowledge! <br />
-        Let's get to the exam!
-      </span>
+  <div class="home-padding"></div>
+
+  <div class="row">
+    <div class="col-6 mx-auto block">
+      <a href="/learning/1"><button class="button-start">
+      <span class="button-wrapper">  Learn  </span>
+      </button></a>
+      <div id="learn" class="text1">
+        Don't know any music theory? <br />
+        Need to review? <br />
+        Let's learn!
+      </div>
+    </div>
+
+    <div class="col-6 mx-auto block">
+      <a href="/quiz/1"><button class="button-start">
+        <span class="button-wrapper">  Test </span>
+      </button></a>
+      <div id="test" class="text1">
+        <span>
+          Ready to test your knowledge! <br />
+          Let's get to the exam!
+        </span>
+      </div>
     </div>
   </div>
 </div>
