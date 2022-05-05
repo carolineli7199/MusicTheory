@@ -2,10 +2,9 @@ const { Renderer, Stave, Voice, StaveNote, Formatter } = Vex.Flow;
 
 $(document).ready(function(){
     if (img_num == "1"){
-        $("#imgs").append("<div class='col-4 mx-auto'></div>")
 
         let staffdiv = document.createElement("div")
-        staffdiv.className = "col-4 mx-auto"
+        staffdiv.className = "music-img col-md-12"
         console.log(staffdiv)
         let renderer = new Renderer(staffdiv, Renderer.Backends.SVG);
         renderer.resize(400, 200)
@@ -36,7 +35,6 @@ $(document).ready(function(){
         stave.setContext(context).draw()
 
         document.getElementById("imgs").append(staffdiv)
-        $("#imgs").append("<div class='col-4 mx-auto'></div>")
     }
     if (img_num == "2"){
         console.log(staff_data)

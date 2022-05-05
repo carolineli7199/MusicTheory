@@ -14,7 +14,7 @@ function loadQuizEnd(num, total) {
     );
     $("#previous-button").html(
       "<a href='/'> <button class='next-button-start'>" +
-        "<span lass='next-button-wrapper'>  < Home  </span></button></a>"
+        "<span lass='next-button-wrapper'>  Home  </span></button></a>"
     );
   } else {
     $("#result").append(
@@ -26,7 +26,7 @@ function loadQuizEnd(num, total) {
     );
     $("#previous-button").html(
       "<a href='/learning/1'> <button class='next-button-start'>" +
-        "<span lass='next-button-wrapper'>  < Review  </span></button></a>"
+        "<span lass='next-button-wrapper'>  Review  </span></button></a>"
     );
   }
 }

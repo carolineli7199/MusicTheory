@@ -13,10 +13,8 @@ $(document).ready(function () {
       "</div></div>"
   );
   if (type == "mc") {
-    // $("#image").append("<div class='col-4 mx-auto'></div>");
-
     let staffdiv = document.createElement("div");
-    staffdiv.className = "col-4 mx-auto";
+    staffdiv.className = "music-img col-md-12"
     console.log(staffdiv);
     let renderer = new Renderer(staffdiv, Renderer.Backends.SVG);
     renderer.resize(370, 200);
@@ -50,7 +48,6 @@ $(document).ready(function () {
     stave.setContext(context).draw();
 
     document.getElementById("image").append(staffdiv);
-    // $("#image").append("<div class='col-4 mx-auto'></div>");
     setMC();
   } else if (type == "clicknode") {
     build_block();
@@ -90,7 +87,7 @@ function setMC() {
 
 function build_block() {
   let str =
-    '<div class="col-4 mx-auto"> <svg width="800" height="400" viewBox="0 0 400 200" style="width: 400px; height: 200px;"><g class="vf-stave" id="vf-auto1000">' +
+    '<div class="col-4 mx-auto" style="display: flex; justify-content: center;"> <svg width="800" height="400" viewBox="0 0 400 200" style="width: 400px; height: 200px;"><g class="vf-stave" id="vf-auto1000">' +
     '<path id="b1" onclick=checkNum_num(1) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 80L360 80"></path> <rect id="b2" onclick=checkNum_num(2) x="10" y="83" width="350" height="10" style="fill:rgb(255,255,255);"/>' +
     '<path id="b3" onclick=checkNum_num(3) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 95L360 95"></path> <rect id="b4" onclick=checkNum_num(4) x="10" y="98" width="350" height="10" style="fill:rgb(255,255,255);"/>' +
     '<path id="b5" onclick=checkNum_num(5) stroke-width="5" stroke-dasharray="none" fill="none" stroke="#999999" d="M10 110L360 110"></path><rect id="b6" onclick=checkNum_num(6) x="10" y="113" width="350" height="10" style="fill:rgb(255,255,255);"/>' +

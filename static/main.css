@@ -1,3 +1,8 @@
+html {
+  height: 100%;
+  background-color: #f5f0e1;
+}
+
 .title {
   font-size: 40px;
   font-weight: bolder;
@@ -114,6 +119,12 @@
   height: 20vh;
 }
 
+.end-button-container {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+}
+
 .mc-options {
   display: flex;
   justify-content: center;
@@ -134,9 +145,21 @@
   padding-left: 30px;
 }
 
+.imgs {
+  display: flex;
+  width: 100%;
+}
+
+.music-img {
+  display: flex;
+  justify-content: center;
+}
+
+#clickstaff
+
 .home-container {
   padding-top: 50px;
-  height: 90vh;
+  height: 100%;
 }
 
 .container-style {
