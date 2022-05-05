@@ -90,12 +90,12 @@
 
 .float-right {
   float: right;
-  padding-right: 10%;
+  padding-right: 5%;
 }
 
 .float-left {
   float: left;
-  padding-left: 10%;
+  padding-left: 5%;
 }
 
 .learning-container {
@@ -106,6 +106,8 @@
 
 .button-container {
   height: 20vh;
+  display: flex;
+  justify-content: space-between;
 }
 
 .home-container {
