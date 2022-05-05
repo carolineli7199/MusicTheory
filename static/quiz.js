@@ -59,14 +59,10 @@ $(document).ready(function () {
 
 function setMC() {
   console.log(options.length);
-  if (options.length == 2) {
-    let space = $("<div class='col-md-3'></div>");
-    $("#options_c").append(space);
-  }
   $.each(options, function (index, value) {
-    let cont = $("<div class='col-md-10'>" + contents[index] + "</div>");
+    let cont = $("<div class='col-md-11'>" + contents[index] + "</div>");
     let btn = $(
-      "<div class='col-md-2'><button class='mc-button' onclick='getNext(`" +
+      "<div><button class='mc-button' onclick='getNext(`" +
         value +
         "`,`" +
         quiz_id +
@@ -74,6 +70,8 @@ function setMC() {
         value +
         "</button></div>"
     );
+    $("#options_c").append(btn);
+    /*
     if (has_contents == 0) {
       $("#options_c").append(btn);
     }
@@ -85,6 +83,8 @@ function setMC() {
         .append(btn)
         .append(cont);
     }
+
+     */
   });
 }
 

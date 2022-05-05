@@ -163,17 +163,17 @@ quiz_data = {
             "clef": 1,
             "notes": []
         },
-        "correct": "C",
+        "correct": "Treble",
         "options": [
-            "A",
-            "B",
-            "C"
+            "Clef",
+            "Bass",
+            "Treble"
         ],
         "has_contents": 1,
         "contents": [
             "Clef",
             "Bass",
-            "treble"
+            "Treble"
         ],
         "end_flag": 0
     },

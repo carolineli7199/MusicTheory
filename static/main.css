@@ -110,6 +110,30 @@
   justify-content: space-between;
 }
 
+.quiz-button-container {
+  height: 20vh;
+}
+
+.mc-options {
+  display: flex;
+  justify-content: center;
+}
+
+#options {
+  display: flex;
+  justify-content: space-between;
+}
+
+#options_c > * {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+#options_blocks0 > * {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
 .home-container {
   padding-top: 50px;
   height: 90vh;
