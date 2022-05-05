@@ -7,6 +7,7 @@
         src="{{ url_for('static', filename = 'learn.js') }}"
     ></script>
 
+
     <script>
       let data = {{learning_data|tojson}};
       let img_num = data["num_imgs"]

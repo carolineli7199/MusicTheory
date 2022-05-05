@@ -83,6 +83,9 @@
   border-radius: 25px;
   background-color: whitesmoke;
   height: 30vh;
+  font-size: 21px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .float-right {
