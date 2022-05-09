@@ -83,7 +83,7 @@ html {
   margin: auto;
   width: 60%;
   padding: 10px;
-  padding-top: 50px;
+  padding-top: 35px;
   border-style: outset;
   border-radius: 25px;
   background-color: whitesmoke;
@@ -155,9 +155,7 @@ html {
   justify-content: center;
 }
 
-#clickstaff
-
-.home-container {
+#clickstaff .home-container {
   padding-top: 50px;
   height: 100%;
 }

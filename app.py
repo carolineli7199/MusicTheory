@@ -367,7 +367,7 @@ def checkanswer():
     json_data = request.get_json()   
     user_answer = json_data["user_answer"] 
     quiz_id = json_data["quiz_id"]
-    if quiz_id == 1:
+    if quiz_id == "1":
         num_correct_answer = 0
     # print(quiz_data[quiz_id]["correct"] )
     # print(user_answer)
